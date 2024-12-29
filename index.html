@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket game</title>
+    <style>
+        .main{
+            width: 100%;
+            text-align: center;
+        }
+        .computercho{
+            color: #ff000070;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            width: 40%;
+            padding: 12px;
+            border: 2px solid #ff000070;
+            border-radius: 20px;
+
+        }
+        .output{
+            color: aliceblue;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            width: 50%;
+            padding: 20px;
+            background-color: rgba(255, 0, 0, 0.438);
+            border: 0px solid rgba(255, 0, 0, 0.671);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>Bat Ball Stump Game</h1>
+    <button  onclick="
+    console.log('you have chosen bat');
+    let computerChoice;
+    document.querySelector('.computercho').value = '';
+    document.querySelector('.output').value = '';
+    let randomnumber = Math.random()*3;
+    if(randomnumber >0 && randomnumber <=1){
+         computerChoice = 'Bat';
+        console.log('bat');
+        document.querySelector('.computercho').value = 'bat';
+    }
+    else if(randomnumber >1 && randomnumber <=2){
+         computerChoice = 'Ball';
+        console.log('ball');
+        document.querySelector('.computercho').value = 'ball';
+    }
+    else{
+         computerChoice ='stump';
+        console.log('stump');
+        document.querySelector('.computercho').value = 'stump';
+    }
+
+    if(computerChoice ==='Ball'){
+        console.log('you won');
+        document.querySelector('.output').value = 'you won the game,computer lose';
+
+    }
+    else if(computerChoice === 'Bat'){
+        console.log('game draw');
+        document.querySelector('.output').value = 'game is graw both have same option';
+    }
+    else{
+        console.log('you lose the game')
+        document.querySelector('.output').value = 'you lose the game ';
+    }
+    
+    "
+    >Bat</button>
+    <button onclick="
+    console.log('you have chosen ball');
+    let computerChoice;
+    document.querySelector('.computercho').value = '';
+    document.querySelector('.output').value = '';
+    let randomnumber = Math.random()*3;
+    if(randomnumber >0 && randomnumber <=1){
+         computerChoice = 'Bat';
+        console.log('bat');
+        document.querySelector('.computercho').value = 'bat';
+    }
+    else if(randomnumber >1 && randomnumber <=2){
+         computerChoice = 'Ball';
+        console.log('ball');
+        document.querySelector('.computercho').value = 'ball';
+    }
+    else{
+         computerChoice ='stump';
+        console.log('stump');
+        document.querySelector('.computercho').value = 'stump';
+    }
+
+    if(computerChoice ==='Ball'){
+        console.log('you won');
+        document.querySelector('.output').value = 'game is graw both have same option';
+
+    }
+    else if(computerChoice === 'Bat'){
+        console.log('game draw');
+        document.querySelector('.output').value = 'Computer won the game,you lose';
+    }
+    else{
+        console.log('you lose the game')
+        document.querySelector('.output').value = 'you won the game ';
+    }
+    
+    ">Ball</button>
+    
+    <button onclick="
+    console.log('you have chosen Stump');
+    let computerChoice;
+    document.querySelector('.computercho').value = '';
+    document.querySelector('.output').value = '';
+    let randomnumber = Math.random()*3;
+    if(randomnumber >0 && randomnumber <=1){
+         computerChoice = 'Bat';
+        console.log('bat');
+        document.querySelector('.computercho').value = 'bat';
+    }
+    else if(randomnumber >1 && randomnumber <=2){
+         computerChoice = 'Ball';
+        console.log('ball');
+        document.querySelector('.computercho').value = 'ball';
+    }
+    else{
+         computerChoice ='stump';
+        console.log('stump');
+        document.querySelector('.computercho').value = 'stump';
+    }
+
+    if(computerChoice ==='Ball'){
+        console.log('you won');
+        document.querySelector('.output').value = 'computer won the match';
+
+    }
+    else if(computerChoice === 'Bat'){
+        console.log('game draw');
+        document.querySelector('.output').value = 'you won the match';
+    }
+    else{
+        console.log('you lose the game')
+        document.querySelector('.output').value = 'the match is draw ';
+    }
+    
+    ">Stump</button>
+    <br>
+    <hr>
+    <br>
+    <label for="computercho" id="CMPC"   ></label>computer Choice:</label>
+    <input type="text" id="CMPC" class="computercho" readonly>
+    <br>
+    <hr>
+    <br>
+    <input type="text" class="output" readonly>
+</div>
+
+<script>
+
+
+</script>
+</body>
+</html>
