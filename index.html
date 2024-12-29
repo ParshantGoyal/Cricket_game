@@ -37,130 +37,70 @@
     <div class="main">
     <h1>Bat Ball Stump Game</h1>
     <button  onclick="
-    console.log('you have chosen bat');
-    let computerChoice;
-    document.querySelector('.computercho').value = '';
-    document.querySelector('.output').value = '';
-    let randomnumber = Math.random()*3;
-    if(randomnumber >0 && randomnumber <=1){
-         computerChoice = 'Bat';
-        console.log('bat');
-        document.querySelector('.computercho').value = 'bat';
-    }
-    else if(randomnumber >1 && randomnumber <=2){
-         computerChoice = 'Ball';
-        console.log('ball');
-        document.querySelector('.computercho').value = 'ball';
-    }
-    else{
-         computerChoice ='stump';
-        console.log('stump');
-        document.querySelector('.computercho').value = 'stump';
-    }
-
-    if(computerChoice ==='Ball'){
-        console.log('you won');
-        document.querySelector('.output').value = 'you won the game,computer lose';
-
-    }
-    else if(computerChoice === 'Bat'){
-        console.log('game draw');
-        document.querySelector('.output').value = 'game is graw both have same option';
-    }
-    else{
-        console.log('you lose the game')
-        document.querySelector('.output').value = 'you lose the game ';
-    }
-    
-    "
-    >Bat</button>
-    <button onclick="
-    console.log('you have chosen ball');
-    let computerChoice;
-    document.querySelector('.computercho').value = '';
-    document.querySelector('.output').value = '';
-    let randomnumber = Math.random()*3;
-    if(randomnumber >0 && randomnumber <=1){
-         computerChoice = 'Bat';
-        console.log('bat');
-        document.querySelector('.computercho').value = 'bat';
-    }
-    else if(randomnumber >1 && randomnumber <=2){
-         computerChoice = 'Ball';
-        console.log('ball');
-        document.querySelector('.computercho').value = 'ball';
-    }
-    else{
-         computerChoice ='stump';
-        console.log('stump');
-        document.querySelector('.computercho').value = 'stump';
-    }
-
-    if(computerChoice ==='Ball'){
-        console.log('you won');
-        document.querySelector('.output').value = 'game is graw both have same option';
-
-    }
-    else if(computerChoice === 'Bat'){
-        console.log('game draw');
-        document.querySelector('.output').value = 'Computer won the game,you lose';
-    }
-    else{
-        console.log('you lose the game')
-        document.querySelector('.output').value = 'you won the game ';
-    }
-    
-    ">Ball</button>
+    let computerChoice = compCh();
+    let userchoice = 'Bat';
+    result(userchoice,computerChoice);
+    ">Bat</button>
     
     <button onclick="
-    console.log('you have chosen Stump');
-    let computerChoice;
-    document.querySelector('.computercho').value = '';
-    document.querySelector('.output').value = '';
-    let randomnumber = Math.random()*3;
-    if(randomnumber >0 && randomnumber <=1){
-         computerChoice = 'Bat';
-        console.log('bat');
-        document.querySelector('.computercho').value = 'bat';
-    }
-    else if(randomnumber >1 && randomnumber <=2){
-         computerChoice = 'Ball';
-        console.log('ball');
-        document.querySelector('.computercho').value = 'ball';
-    }
-    else{
-         computerChoice ='stump';
-        console.log('stump');
-        document.querySelector('.computercho').value = 'stump';
-    }
-
-    if(computerChoice ==='Ball'){
-        console.log('you won');
-        document.querySelector('.output').value = 'computer won the match';
-
-    }
-    else if(computerChoice === 'Bat'){
-        console.log('game draw');
-        document.querySelector('.output').value = 'you won the match';
-    }
-    else{
-        console.log('you lose the game')
-        document.querySelector('.output').value = 'the match is draw ';
-    }
+      computerChoice = compCh();
+     userchoice = 'Ball';
+    result(userchoice,computerChoice);
+   ">Ball</button>
     
+    <button onclick="
+     computerChoice = compCh();
+     userchoice = 'Stump';
+    result(userchoice,computerChoice);
     ">Stump</button>
-    <br>
-    <hr>
-    <br>
+    <br><hr><br>
     <label for="computercho" id="CMPC"   ></label>computer Choice:</label>
     <input type="text" id="CMPC" class="computercho" readonly>
-    <br>
-    <hr>
-    <br>
+    <br><hr><br>
     <input type="text" class="output" readonly>
 </div>
 
 <script>
+function compCh(){
+    let computerChoice;
+    document.querySelector('.computercho').value = '';
+    let randomnumber = Math.random()*3;
+    if(randomnumber >0 && randomnumber <=1){
+         computerChoice = 'Bat';
+        document.querySelector('.computercho').value = 'bat';
+    }
+    else if(randomnumber >1 && randomnumber <=2){
+         computerChoice = 'Ball';
+        document.querySelector('.computercho').value = 'ball';
+    }
+    else{
+         computerChoice ='stump';
+        document.querySelector('.computercho').value = 'stump';
+    }
+    return computerChoice;
+}
+function result(useraction,computeraction){
+    document.querySelector('.output').value = '';
+    if(useraction === computeraction){
+        document.querySelector('.output').value = 'game is draw both have same option'
+    }
+    else if(useraction === 'Bat'){
+        if(computeraction === 'Ball'){
+            document.querySelector('.output').value = 'User win the game'
+        }
+        else{document.querySelector('.output').value = 'Computer win the game'}}
+    else if(useraction === 'Ball'){
+        if(computeraction === 'Bat'){
+            document.querySelector('.output').value = 'Computer win the game'
+        }
+        else{document.querySelector('.output').value = 'User win the game'}}
+else {
+    if(computeraction === 'Bat'){
+            document.querySelector('.output').value = 'User win the game'
+        }
+        else{document.querySelector('.output').value = 'Computer win the game'}}
+}   
+    
 
 
 </script>
