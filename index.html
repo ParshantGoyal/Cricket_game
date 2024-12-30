@@ -60,14 +60,47 @@
     <input type="text" class="output" readonly>
     <br>
     <div id="mainResult"></div>
+    <br><br>
+    <div id="reset_bt" >
+            <button onclick="resetBt()">RESET</button>
+    </div>
 </div>
 
 <script>
-    let score ={
+
+    let scoreStr = localStorage.getItem('Score');
+    let score;
+    resetScore(scoreStr);
+    function resetScore(){
+    score =scoreStr ?JSON.parse(scoreStr):{
         win:0,
         lost:0,
         tie:0,
+        } ;
     }
+    // if(scoreStr !== 'undefined'){
+    //     score =JSON.parse(scoreStr)
+    // }
+    // else{
+    //     score ={
+    //     win:0,
+    //     lost:0,
+    //     tie:0,
+    //     }}
+     
+    
+    score.displayscore = function(){
+          return (document.querySelector('#mainResult').innerHTML =`<h2> Win: ${score.win} , Lost: ${score.lost}
+             , tie:${score.tie}<h2> `)
+        }
+
+     document.querySelector('#mainResult').innerHTML = `<h5>Old Score: ${scoreStr}</h5>`;
+function resetBt(){
+    localStorage.clear();
+        alert('score reset successfully')
+        resetScore();
+    }
+
 function compCh(){
     let computerChoice;
     document.querySelector('.computercho').value = '';
@@ -109,8 +142,10 @@ else {
             document.querySelector('.output').value = 'User win the game';score.win++
         }
         else{document.querySelector('.output').value = 'Computer win the game';score.lost++}}
-        document.querySelector('#mainResult').innerHTML =`<h2> Win: ${score.win} , Lost: ${score.lost}
-             , tie:${score.tie}<h2> `;    
+        ;
+        localStorage.setItem("Score",JSON.stringify(score));    
+        score.displayscore();
+
 
 }
 
