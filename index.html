@@ -40,19 +40,19 @@
     let computerChoice = compCh();
     let userchoice = 'Bat';
     result(userchoice,computerChoice);
-    ">Bat</button>
+    "><img src="images/bat.png"></button>
     
     <button onclick="
       computerChoice = compCh();
      userchoice = 'Ball';
     result(userchoice,computerChoice);
-   ">Ball</button>
+   "><img src="images/ball.png"></button>
     
     <button onclick="
      computerChoice = compCh();
      userchoice = 'Stump';
     result(userchoice,computerChoice);
-    ">Stump</button>
+    "><img src="images/stump.png"></button>
     <br><hr><br>
     <label for="computercho" id="CMPC"   ></label>computer Choice:</label>
     <input type="text" id="CMPC" class="computercho" readonly>
@@ -99,6 +99,7 @@ function resetBt(){
     localStorage.clear();
         alert('score reset successfully')
         resetScore();
+        
     }
 
 function compCh(){
